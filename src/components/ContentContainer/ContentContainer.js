@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import styled from "styled-components";
 import axios from "axios";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Item from "../Item/Item";
+import {setParsedData} from "../../redux/actions/actions";
 
 const Container = styled.div`
     max-width: 1320px;
@@ -11,6 +12,34 @@ const Container = styled.div`
 
 const ContentContainer = props => {
     const itemArr = useSelector(state => state.content.itemArr)
+    const filterState = useSelector(({filterState}) => filterState)
+    const dispatch = useDispatch()
+
+    useEffect( () => {
+        async function test () {
+            try {
+                const req = await axios('https://tired-frontend-backend.sergeykorobejni.repl.co/filter-state',{
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    data: filterState
+                })
+                const res = await axios('https://tired-frontend-backend.sergeykorobejni.repl.co/parsed-data',{
+                    method: "GET",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                dispatch(setParsedData(res.data))
+            } catch (e) {
+                console.log(e)
+            }
+        }
+        test()
+    },[filterState])
+
+
     return (
         <Container>
             {
@@ -18,7 +47,8 @@ const ContentContainer = props => {
                     <Item
                         key={item.id}
                         title = {item.title}
-                        content={item.content}
+                        content={item.text}
+                        href={item.link}
                         src={item.src}
                     />
                 )

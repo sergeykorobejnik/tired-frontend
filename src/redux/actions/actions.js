@@ -1,10 +1,11 @@
 import {
     ADD_NEW_FILTER_LABEL,
     FILTER_SRC_STATE_SWAP,
-    IS_FILTER_MENU,
+    IS_FILTER_MENU, PARSE_DATA,
     PUT_FETCHED_DATA,
-    REMOVE_FILTER_LABEL, SET_EXP_LEVEL
+    REMOVE_FILTER_LABEL, SET_EXP_LEVEL, SET_PARSED_DATA
 } from "./actionTypes";
+import parser from "../../uttils/parser/parser";
 
 export const putFetchedData = payload => {
     return {
@@ -45,3 +46,11 @@ export const setExpLevel = payload => {
         payload: payload
     }
 }
+
+export const setParsedData = payload => {
+    return  {
+        type: SET_PARSED_DATA,
+        payload: payload
+    }
+}
+

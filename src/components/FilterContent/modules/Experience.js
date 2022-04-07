@@ -49,7 +49,7 @@ const ExpLevel = styled.button`
 
 const Experience = props => {
 
-    const [state, setState] = useState([false, true, false])
+    const [state, setState] = useState([false ,true, false, false])
     const dispatch = useDispatch()
 
 
@@ -64,7 +64,7 @@ const Experience = props => {
             }
         )
         setState(nextState)
-        dispatch(setExpLevel(currentIndex + 1))
+        dispatch(setExpLevel(currentIndex))
     }
 
     return (
@@ -74,13 +74,19 @@ const Experience = props => {
                 {
                     state.map(
                         (item, index) => {
+                            if(index === 0) {
+                                return <ExpLevel
+                                    key={index}
+                                    onClick={() => handleChanges(index)}
+                                    isChecked={state[index]}
+                                >Without experience</ExpLevel>
+                            }
                             return <ExpLevel
-                                className={index === 1 ? "checked" : ""}
                                 key={index}
                                 onClick={() => handleChanges(index)}
                                 isChecked={state[index]}
                             >
-                                {index + 1} year</ExpLevel>
+                                {index} year</ExpLevel>
                         }
                     )
                 }

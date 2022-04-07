@@ -14,7 +14,8 @@ const ItemWrapper = styled.a`
     cursor: pointer;
     text-decoration: none;
     color: #000;
-    margin-bottom: 30px;  
+    margin-bottom: 30px;
+    transition: .5s ease-in-out;
     span {
       font-size: 24px;
       font-weight: 700;
@@ -50,7 +51,7 @@ const Item = props => {
         }
     }
     return (
-        <ItemWrapper href={""}>
+        <ItemWrapper href={props.href}>
             <img
                 src={svgChoice(props.src)}
                 alt={props.src}

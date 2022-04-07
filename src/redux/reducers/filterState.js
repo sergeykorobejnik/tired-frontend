@@ -16,25 +16,26 @@ const initialState = window?.localStorage["filterState"] ?
         workua: false,
     },
     keywords: [],
-    expLevel: 2
+    expLevel: 1
 }
 
 export default function filterState (state = initialState, action) {
 
     switch (action.type) {
-        case FILTER_SRC_STATE_SWAP: {
-            const nextState = produce(state, ({srcState}) => {
-                srcState[action.payload] = !srcState[action.payload]
-            })
-            setLocalStorage(nextState)
-            return nextState
-        }
         case ADD_NEW_FILTER_LABEL: {
             const nextState = produce(state, ({keywords}) => {
                 keywords.push({
                     id: IdGenerator(action.payload),
                     text: action.payload
                 })
+            })
+            setLocalStorage(nextState)
+            return nextState
+        }
+        case FILTER_SRC_STATE_SWAP: {
+            const nextState = produce(state, ({srcState}) => {
+                srcState[action.payload] = !srcState[action.payload]
+                console.log('action-captured')
             })
             setLocalStorage(nextState)
             return nextState
