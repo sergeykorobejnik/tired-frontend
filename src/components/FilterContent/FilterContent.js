@@ -19,7 +19,7 @@ const Filter = styled.div`
     height: 100vh;
     margin: 0 auto;
     background: #fff;
-    z-index: 3;
+    z-index: 20;
     transform: translateX(${({isActive}) => isActive ? 0 : "110%"});
     transition: .5s ease-in-out;
     @media only screen and (min-width: 1280px) {
