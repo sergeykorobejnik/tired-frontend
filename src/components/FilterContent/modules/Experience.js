@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
-import {useDispatch, useSelector} from "react-redux";
-import {setExpLevel} from "../../../redux/actions/actions";
+import {useDispatch, } from "react-redux";
+import {isFilterMenu, setExpLevel} from "../../../redux/actions/actions";
+import backBtn from "./assets/backBtn.svg"
 
 const Container = styled.div`
 
@@ -39,12 +40,29 @@ const ExpLevel = styled.button`
   color: ${
           ({isChecked}) => isChecked ? "var(--white)" : "var(--secondary)"
   };
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   transition: .5s ease-in-out;
   cursor: pointer;
   display: block;
   border: none;
+  @media only screen and (min-width: 1280px) {
+    font-size: 24px;
+  }
+`
+
+
+const BackButton = styled.button` 
+    border: none;
+    background: #F66;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0 ;
+    width: 100%;
+    cursor: pointer;
 `
 
 const Experience = props => {
@@ -74,19 +92,12 @@ const Experience = props => {
                 {
                     state.map(
                         (item, index) => {
-                            if(index === 0) {
-                                return <ExpLevel
-                                    key={index}
-                                    onClick={() => handleChanges(index)}
-                                    isChecked={state[index]}
-                                >Without experience</ExpLevel>
-                            }
                             return <ExpLevel
                                 key={index}
                                 onClick={() => handleChanges(index)}
                                 isChecked={state[index]}
                             >
-                                {index} year</ExpLevel>
+                                {index} years</ExpLevel>
                         }
                     )
                 }

@@ -11,18 +11,24 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   .logo {
-      padding: 30px 45px;
-      background: #000;
-      border-radius: 0 0 12px 12px;
-      width: 580px;
-      position: relative;
-      z-index: 2;
-
-  }
-    img {
-      font-size: 24px;
-      font-weight: 700;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    background: var(--secondary);
+    padding: 10px 5px;
+    @media only screen and (min-width: 1280px) {
+      padding: 12px 5px;
     }
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+      font-weight: 700;
+      @media only screen and (min-width: 1280px) {
+        width: 270px;
+      }
+    }
+  }
     
 `
 

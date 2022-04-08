@@ -8,24 +8,33 @@ import {setParsedData} from "../../redux/actions/actions";
 const Container = styled.div`
     max-width: 1320px;
     margin: 0 auto;
+    overflow-y: hidden;
+    padding: 0 10px;
+    height: ${props => props.cintainerHeight};
+    @media only screen and (min-width: 1280px) {
+      padding: 0;
+    }
 `
 
-const ContentContainer = props => {
+const ContentContainer = ({settings}) => {
     const itemArr = useSelector(state => state.content.itemArr)
     const filterState = useSelector(({filterState}) => filterState)
     const dispatch = useDispatch()
 
+
+    const {root, get, post} = settings
+
     useEffect( () => {
         async function test () {
             try {
-                const req = await axios('https://tired-frontend-backend.sergeykorobejni.repl.co/filter-state',{
+                const req = await axios(root + post,{
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     data: filterState
                 })
-                const res = await axios('https://tired-frontend-backend.sergeykorobejni.repl.co/parsed-data',{
+                const res = await axios(root + get,{
                     method: "GET",
                     headers: {
                         'Content-Type': 'application/json'

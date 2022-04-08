@@ -65,7 +65,8 @@ const Keywords = props => {
             <input type="text" onKeyDown={keyHandler} placeholder={"Enter keyword..."}/>
             <div className="keyword-container">
                 {
-                    labelArr.map(({id, text}) => <Label
+                    labelArr.map(({id, text}) =>
+                        <Label
                         key={id}
                         text={text}
                         handler={() => dispatch(removeFilterLabel(id))}

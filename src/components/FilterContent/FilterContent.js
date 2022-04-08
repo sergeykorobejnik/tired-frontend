@@ -8,25 +8,29 @@ import {swapFilterSrcState} from "../../redux/actions/actions";
 import Keywords from "./modules/Keywords";
 import filterState from "../../redux/reducers/filterState";
 import Experience from "./modules/Experience";
+import BackButton from "./BackButton";
 
 
 const Filter = styled.div`
     position: fixed;
     right: 0;
-    top: 166px;
-    width: 480px;
-    height: 600px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
-    overflow: hidden;
-    border-radius: 12px 0 0 12px;
     background: #fff;
     z-index: 3;
     transform: translateX(${({isActive}) => isActive ? 0 : "110%"});
     transition: .5s ease-in-out;
+    @media only screen and (min-width: 1280px) {
+      width: 480px;
+      height: 100vh;
+    }
     h2 {
       color: var(--white);
       text-align: center;
       margin: 0;
+      font-size: 24px;
     }
     .src {
       h2 {
@@ -37,14 +41,21 @@ const Filter = styled.div`
       }
     }
     .title-container {
-      background: #000;
-      padding: 8px 0;
+      background: var(--secondary);
+      padding: 10px 0;
+      font-size: 16px;
+      @media only screen and (min-width: 1280px) {
+        padding: 16px 0;
+      }
       
     }
     .websites {
       display: flex;
       justify-content: space-between;
-      padding: 0 50px;
+      padding: 0 15px;
+      @media only screen and (min-width: 1280px) {
+        padding: 0 50px;
+      }
     }   
     
 `
@@ -84,6 +95,7 @@ const FilterContent = props => {
             </div>
             <Keywords/>
             <Experience/>
+            <BackButton/>
         </Filter>
     );
 };

@@ -36,8 +36,7 @@ const FilterLabel = styled.div`
 `
 
 
-const Label = ({id, text, handler}) => {
-    console.log(id)
+const Label = ({text, handler}) => {
     return (
         <FilterLabel>
             <FilterLabel>

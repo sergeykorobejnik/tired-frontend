@@ -13,6 +13,7 @@ import axios from "axios";
 
 
 const GlobalStyles = styled.div`
+    
 `
 
 
