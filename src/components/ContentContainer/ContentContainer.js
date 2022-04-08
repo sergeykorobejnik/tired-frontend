@@ -4,6 +4,7 @@ import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import Item from "../Item/Item";
 import {setParsedData} from "../../redux/actions/actions";
+import ContentPlaceholder from "./modules/ContentPlaceholder";
 
 const Container = styled.div`
     max-width: 1320px;
@@ -14,6 +15,10 @@ const Container = styled.div`
     @media only screen and (min-width: 1280px) {
       padding: 0;
     }
+`
+
+const Placeholder = styled.p` 
+    
 `
 
 const ContentContainer = ({settings}) => {
@@ -46,12 +51,12 @@ const ContentContainer = ({settings}) => {
             }
         }
         test()
-    },[filterState])
-
+        console.log("Effect")
+    }, [filterState])
 
     return (
         <Container>
-            {
+            { itemArr.length > 0 ?
                 itemArr.map(item =>
                     <Item
                         key={item.id}
@@ -59,8 +64,8 @@ const ContentContainer = ({settings}) => {
                         content={item.text}
                         href={item.link}
                         src={item.src}
-                    />
-                )
+                    />) :
+                <ContentPlaceholder />
             }
         </Container>
     );
