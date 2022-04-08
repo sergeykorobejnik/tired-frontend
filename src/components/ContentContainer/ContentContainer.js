@@ -9,7 +9,6 @@ import ContentPlaceholder from "./modules/ContentPlaceholder";
 const Container = styled.div`
     max-width: 1320px;
     margin: 0 auto;
-    overflow-y: hidden;
     padding: 0 10px;
     height: ${props => props.cintainerHeight};
     @media only screen and (min-width: 1280px) {

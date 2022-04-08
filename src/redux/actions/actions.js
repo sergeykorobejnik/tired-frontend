@@ -1,7 +1,7 @@
 import {
-    ADD_NEW_FILTER_LABEL,
+    ADD_NEW_FILTER_LABEL, CLOSE_ALL_POPUPS,
     FILTER_SRC_STATE_SWAP,
-    IS_FILTER_MENU, PARSE_DATA,
+    IS_FILTER_MENU, OPEN_NEW_POPUP, PARSE_DATA,
     PUT_FETCHED_DATA,
     REMOVE_FILTER_LABEL, SET_EXP_LEVEL, SET_PARSED_DATA
 } from "./actionTypes";
@@ -35,9 +35,10 @@ export const removeFilterLabel = payload => {
         payload: payload
     }
 }
-export const isFilterMenu = payload => {
+export const openNewPopup = payload => {
     return  {
-        type: IS_FILTER_MENU,
+        type: OPEN_NEW_POPUP,
+        payload: payload
     }
 }
 export const setExpLevel = payload => {
@@ -51,6 +52,12 @@ export const setParsedData = payload => {
     return  {
         type: SET_PARSED_DATA,
         payload: payload
+    }
+}
+
+export const closeAllPopups = () => {
+    return  {
+        type: CLOSE_ALL_POPUPS
     }
 }
 

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import {useDispatch, } from "react-redux";
-import {isFilterMenu, setExpLevel} from "../../../redux/actions/actions";
+import {openNewPopup, setExpLevel} from "../../../redux/actions/actions";
 import backBtn from "./assets/backBtn.svg"
 
 const Container = styled.div`

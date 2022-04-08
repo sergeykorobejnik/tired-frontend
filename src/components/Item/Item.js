@@ -18,6 +18,9 @@ const ItemWrapper = styled.a`
     display: flex;
     flex-direction: column;
     opacity: ${({isMounted}) => isMounted ? "1" : "0"};
+    &:hover {
+      box-shadow: 0 0 15px 3px rgb(0 0 0 / 30%);
+    }
     @media only screen and (min-width: 1280px) {
       padding: 20px 30px;
     }

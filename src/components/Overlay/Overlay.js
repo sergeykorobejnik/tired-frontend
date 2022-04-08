@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
-import {isFilterMenu} from "../../redux/actions/actions";
+import {closeAllPopups} from "../../redux/actions/actions";
 
 const Container = styled.div`
     position: fixed;
@@ -28,7 +28,7 @@ const Overlay = props => {
 
 
     return (
-        <Container isOverlay={isOverlay} onClick={() => dispatch(isFilterMenu())}/>
+        <Container isOverlay={isOverlay} onClick={() => dispatch(closeAllPopups())}/>
     );
 };
 

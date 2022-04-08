@@ -2,10 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import filter from "./assets/filter.svg";
 import {useDispatch} from "react-redux";
-import {isFilterMenu} from "../../redux/actions/actions";
+import {openNewPopup} from "../../redux/actions/actions";
 
 const Container = styled.button`
-    border: none;
     width: 80px;
     height: 30px;
     border-radius: 0 0 12px 12px;
@@ -19,6 +18,7 @@ const Container = styled.button`
     position: relative;
     z-index: 0;
     transition: .3s ease-in-out;
+    border: none;
     &:hover {
       transform: translateY(0);
     }
@@ -42,7 +42,7 @@ const Filter = props => {
     const dispatch = useDispatch()
 
     return (
-        <Container onClick={() => dispatch(isFilterMenu())}>
+        <Container onClick={() => dispatch(openNewPopup('isFilter'))}>
             <img src={filter} alt="filter icon"/>
         </Container>
     );

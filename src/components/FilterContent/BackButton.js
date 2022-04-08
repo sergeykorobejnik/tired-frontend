@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 import styled from "styled-components";
 import backBtn from "./modules/assets/backBtn.svg";
-import {isFilterMenu} from "../../redux/actions/actions";
+import {openNewPopup} from "../../redux/actions/actions";
 
 const RedButton = styled.button` 
     border: none;
@@ -22,7 +22,7 @@ const BackButton = props => {
     const dispatch = useDispatch()
 
     return (
-        <RedButton onClick={() => dispatch(isFilterMenu())}>
+        <RedButton onClick={() => dispatch(openNewPopup('isFilter'))}>
             <img src={backBtn} alt="come back"/>
         </RedButton>
     );
