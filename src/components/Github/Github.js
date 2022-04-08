@@ -66,7 +66,6 @@ const Container = styled.div`
 
 const Github = props => {
     const isGithub = useSelector(({stateManager}) => stateManager.isGithub)
-    console.log(isGithub)
 
     return (
         <Container isGithub={isGithub}>
