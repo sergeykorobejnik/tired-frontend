@@ -50,7 +50,6 @@ const ContentContainer = ({settings}) => {
             }
         }
         test()
-        console.log("Effect")
     }, [filterState])
 
     return (

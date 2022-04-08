@@ -63,10 +63,6 @@ const FilterContent = props => {
     const state = useSelector(({filterState}) => filterState.srcState)
     const isFilter = useSelector(({stateManager}) => stateManager.isFilter)
     const dispatch = useDispatch()
-    const log = () => {
-        console.log('clicked')
-
-    }
     return (
         <Filter isActive={isFilter}>
             <div className="title-container">
@@ -81,7 +77,6 @@ const FilterContent = props => {
                         handler={() => dispatch(swapFilterSrcState("djinni"))}
                     />
                     <SelectButton
-                        onClick={log}
                         type={"dou"}
                         isChecked={state.dou}
                         handler={() => dispatch(swapFilterSrcState("dou"))}

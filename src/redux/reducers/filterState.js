@@ -35,7 +35,6 @@ export default function filterState (state = initialState, action) {
         case FILTER_SRC_STATE_SWAP: {
             const nextState = produce(state, ({srcState}) => {
                 srcState[action.payload] = !srcState[action.payload]
-                console.log('action-captured')
             })
             setLocalStorage(nextState)
             return nextState
