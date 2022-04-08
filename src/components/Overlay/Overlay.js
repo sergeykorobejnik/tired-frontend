@@ -14,7 +14,7 @@ const Container = styled.div`
         ({isOverlay}) => isOverlay ? 2 : -99
     };
     opacity: ${
-        ({isOverlay}) => isOverlay ? "0.2" : "0"
+        ({isOverlay}) => isOverlay ? "0.5" : "0"
     };
     transition: .5s ease-in-out;
     background: #000;

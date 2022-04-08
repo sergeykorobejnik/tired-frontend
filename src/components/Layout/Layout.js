@@ -44,11 +44,16 @@ const Header = styled.header`
     background: transparent;
     border: none;
     border-radius: 12px;
-    width: 90px;
+    width: 70px;
     display: block;
     flex-shrink: 0;
     position: absolute;
-    right: 30px;
+    right: 5px;
+    cursor: pointer;
+    @media only screen and (min-width: 1280px) {
+      width: 90px;
+      right: 30px;
+    }
     
     img {
       width: 100%;

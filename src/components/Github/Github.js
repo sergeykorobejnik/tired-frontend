@@ -13,20 +13,28 @@ const Container = styled.div`
     }};
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
-    width: 920px;
+    width: 80vw;
     z-index: 10;
     border-radius: 12px;
     overflow: hidden;
     transition: .5s ease-in-out;
+    @media only screen and (min-width: 1280px) {
+      width: 920px;
+    }
     .github-header {
       background: var(--secondary);
       padding: 13px 5px;
       margin-bottom: 46px;
+      
       img {
         display: block;
-        width: 64px;
+        width: 40px;
         margin: 0 auto;
+        @media only screen and (min-width: 1280px) {
+          width: 64px;
+        }
       }
+      
     }
     .content {
       display: flex;
@@ -35,13 +43,20 @@ const Container = styled.div`
       justify-content: center;
       h2 {
         margin: 0;
-        font-size: 48px;
+        font-size: 36px;
+        @media only screen and (min-width: 1280px) {
+          font-size: 48px;
+        }
       }
       a {
         text-decoration: none;
         color: var(--secondary);
         font-weight: 700;
-        font-size: 24px;
+        font-size: 14px;
+        text-align: center;
+        @media only screen and (min-width: 1280px) {
+          font-size: 24px;
+        }
       }
       & > :nth-child(n) {
         margin-bottom: 80px;
