@@ -1,12 +1,12 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import styled from "styled-components";
-import backBtn from "./modules/assets/backBtn.svg";
-import {closeAllPopups} from "../../redux/actions/actions";
+import submitIcon from "./assets/submitIcon.svg";
+import {closeAllPopups} from "../../../redux/actions/actions";
 
 const RedButton = styled.button` 
     border: none;
-    background: #F66;
+    background: var(--secondary);
     height: 60px;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@ const BackButton = props => {
 
     return (
         <RedButton onClick={() => dispatch(closeAllPopups())}>
-            <img src={backBtn} alt="come back"/>
+            <img src={submitIcon} alt="submit filters"/>
         </RedButton>
     );
 };

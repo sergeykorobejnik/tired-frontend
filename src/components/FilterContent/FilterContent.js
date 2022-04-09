@@ -6,9 +6,8 @@ import SelectButton from "./modules/SelectButton";
 import {useDispatch, useSelector} from "react-redux";
 import {swapFilterSrcState} from "../../redux/actions/actions";
 import Keywords from "./modules/Keywords";
-import filterState from "../../redux/reducers/filterState";
 import Experience from "./modules/Experience";
-import BackButton from "./BackButton";
+import BackButton from "./modules/BackButton";
 
 
 const Filter = styled.div`
