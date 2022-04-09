@@ -11,7 +11,7 @@ const initialState = window?.localStorage["filterState"] ?
     JSON.parse(window.localStorage["filterState"]) :
     {
     srcState: {
-        djinni: false,
+        djinni: true,
         dou: false,
         workua: false,
     },

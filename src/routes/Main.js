@@ -1,5 +1,11 @@
 import React from 'react';
 import ContentContainer from "../components/ContentContainer/ContentContainer";
+import FilterContent from "../components/FilterContent/FilterContent";
+import styled from "styled-components";
+
+
+const Container = styled.main`
+`
 
 
 const settings = {
@@ -9,9 +15,9 @@ const settings = {
 }
 const Main = props => {
     return (
-        <main>
+        <Container>
             <ContentContainer settings={settings}/>
-        </main>
+        </Container>
     );
 };
 

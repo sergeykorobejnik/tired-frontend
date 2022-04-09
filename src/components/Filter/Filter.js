@@ -5,9 +5,9 @@ import {useDispatch} from "react-redux";
 import {openNewPopup} from "../../redux/actions/actions";
 
 const Container = styled.button`
-    width: 80px;
-    height: 30px;
-    border-radius: 0 0 12px 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,24 +15,27 @@ const Container = styled.button`
     background: var(--white);
     transform: translateY(-4px);
     margin-bottom: 25px;
-    position: relative;
+    position: fixed;
     z-index: 0;
     transition: .3s ease-in-out;
     border: none;
+    right: 5%;
+    bottom: 3%;
+    filter: invert(80%);
     &:hover {
       transform: translateY(0);
     }
     @media only screen and (min-width: 1280px) {
-      width: 200px;
-      height: 50px;
-      margin-bottom: 50px;
+      width: 80px;
+      height: 80px;
     }
     img {
-      max-width: 20px;
+      max-width: 40%;
+      max-height: 40%;
+
       @media only screen and (min-width: 1280px) {
         max-width: 100%;
         max-height: 100%;
-
       }
     }
 `

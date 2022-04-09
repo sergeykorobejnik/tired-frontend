@@ -16,7 +16,7 @@ const Filter = styled.div`
     right: 0;
     top: 0px;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
     background: #fff;
     z-index: 20;
@@ -45,7 +45,7 @@ const Filter = styled.div`
       padding: 10px 0;
       font-size: 16px;
       @media only screen and (min-width: 1280px) {
-        padding: 16px 0;
+        padding: 23px 0;
       }
       
     }
@@ -69,7 +69,7 @@ const FilterContent = props => {
                 <h2>Filter</h2>
             </div>
             <div className="src">
-                <h2>Parsing src</h2>
+                <h2>Source</h2>
                 <div className="websites">
                     <SelectButton
                         type={"djinni"}

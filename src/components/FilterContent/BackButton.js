@@ -15,6 +15,7 @@ const RedButton = styled.button`
     bottom: 0;
     width: 100%;
     cursor: pointer;
+    transition: .5s ease-in-out;
 `
 
 

@@ -18,6 +18,9 @@ const ItemWrapper = styled.a`
     display: flex;
     flex-direction: column;
     opacity: ${({isMounted}) => isMounted ? "1" : "0"};
+    &:visited {
+      background: #D9D9D9;
+    }
     &:hover {
       box-shadow: 0 0 15px 3px rgb(0 0 0 / 30%);
     }
@@ -78,7 +81,7 @@ const Item = props => {
             }
         } else {
             return {
-                title: title.slice(0, 25) + "...",
+                title: title.slice(0, 30) + "...",
                 content: content.slice(0, 100) + "..."
             }
         }
@@ -95,7 +98,7 @@ const Item = props => {
 
 
     return (
-        <ItemWrapper href={props.href} isMounted={isMounted}>
+        <ItemWrapper href={props.href} isMounted={isMounted} target={"_blank"}>
             <img
                 src={svgChoice(props.src)}
                 alt={props.src}

@@ -48,7 +48,8 @@ const Keywords = props => {
 
 
     const keyHandler = ({key, target}) => {
-        const template = new RegExp("[^_!@#$%^&*()_+= ](\\w+)", "g")
+        //const template = new RegExp("[^_!@#$%^&*()_+= ](\\w+)", "g")
+        const template = new RegExp("[A-Za-z0-9ЁёА-я]+", "g")
         const result = target.value.match(template)
         let isLabelExisting = false;
         labelArr.forEach(element => {if(element.text == result) isLabelExisting = !isLabelExisting})

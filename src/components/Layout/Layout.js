@@ -12,42 +12,51 @@ import {openNewPopup} from "../../redux/actions/actions"
 
 
 const Header = styled.header`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: sticky;
   top: 0;
   z-index: 10;
+  margin-bottom: 50px;
+  background: var(--white);
+  padding: 10px 40px;
+  box-shadow: inset 0 -5px 0 0 rgb(0 0 0 / 20%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (min-width: 1280px) {
+    padding: 15px 40px;
+    justify-content: flex-start;
+  }
+  
   .logo {
-    width: 100%;
+    width: 200px;
     position: relative;
     z-index: 2;
     background: var(--secondary);
-    padding: 10px 5px;
+    padding: 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 6px;
     @media only screen and (min-width: 1280px) {
-      padding: 12px 5px;
+      
     }
     img {
       display: block;
-      width: 50%;
+      width: 100%;
       font-weight: 700;
-      @media only screen and (min-width: 1280px) {
-        width: 270px;
-      }
+      object-fit: contain;
     }
   }
   .github {
+    filter: invert(100%);
     background: transparent;
     border: none;
     border-radius: 12px;
     width: 70px;
     display: block;
     flex-shrink: 0;
-    position: absolute;
+    position: absolute; 
+    top: 12px;
     right: 5px;
     cursor: pointer;
     @media only screen and (min-width: 1280px) {
@@ -72,13 +81,13 @@ const Layout = props => {
             <Header>
                 <div className="logo">
                     <img src={logo} alt="Tired front-end"/>
-                    <button className="github" onClick={() => dispatch(openNewPopup('isGithub'))}>
-                        <img src={github} alt="github"/>
-                    </button>
                 </div>
-                <Filter/>
+                <button className="github" onClick={() => dispatch(openNewPopup('isGithub'))}>
+                    <img src={github} alt="github"/>
+                </button>
             </Header>
             <Outlet/>
+            <Filter/>
             <FilterContent/>
             <Github/>
             <Overlay/>

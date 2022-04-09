@@ -12,7 +12,7 @@ const Container = styled.div`
     padding: 0 10px;
     height: ${props => props.cintainerHeight};
     @media only screen and (min-width: 1280px) {
-      padding: 0;
+      padding: 15px;
     }
 `
 
