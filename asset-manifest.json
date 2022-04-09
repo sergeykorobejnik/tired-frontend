@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tired-frontend/static/css/main.0008ba07.css",
-    "main.js": "/tired-frontend/static/js/main.f48678f3.js",
+    "main.js": "/tired-frontend/static/js/main.4ee45686.js",
     "static/js/787.c1112931.chunk.js": "/tired-frontend/static/js/787.c1112931.chunk.js",
     "static/media/djinni.svg": "/tired-frontend/static/media/djinni.72b6fecf3aae9b1e557973e576ea42f4.svg",
     "static/media/HelveticaNeueCyr-Medium.woff": "/tired-frontend/static/media/HelveticaNeueCyr-Medium.3e2445c8e799e3feacec.woff",
@@ -16,13 +16,14 @@
     "static/media/placeholderImg.svg": "/tired-frontend/static/media/placeholderImg.842d7d19e9c22e8b952dd3761f18566e.svg",
     "index.html": "/tired-frontend/index.html",
     "static/media/closeIcon.svg": "/tired-frontend/static/media/closeIcon.620c205c13865a7e934a4e799b7e6bd1.svg",
+    "static/media/submitIcon.svg": "/tired-frontend/static/media/submitIcon.550706d0a949fb024cf43a717f32d04a.svg",
     "static/media/filter.svg": "/tired-frontend/static/media/filter.974b4703038a354c1d9f52078ef51c66.svg",
     "main.0008ba07.css.map": "/tired-frontend/static/css/main.0008ba07.css.map",
-    "main.f48678f3.js.map": "/tired-frontend/static/js/main.f48678f3.js.map",
+    "main.4ee45686.js.map": "/tired-frontend/static/js/main.4ee45686.js.map",
     "787.c1112931.chunk.js.map": "/tired-frontend/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0008ba07.css",
-    "static/js/main.f48678f3.js"
+    "static/js/main.4ee45686.js"
   ]
 }
